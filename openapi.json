@@ -53,6 +53,7 @@
         "in": "header",
         "name": "Authorization"
       }
-    }
+    "schemas": {}
+	}
   }
 }
