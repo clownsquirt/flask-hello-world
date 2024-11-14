@@ -1,0 +1,58 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Flask Hello World API",
+    "version": "1.0.0",
+    "description": "An API that returns a simple Hello, World! message and requires an API key for access.",
+    "termsOfService": "https://clownsquirt.github.io/flask-hello-world/privacy-policy.html"
+  },
+  "servers": [
+    {
+      "url": "https://flask-hello-world-kappa-coral-12.vercel.app",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "getHelloWorld",
+        "summary": "Returns a simple Hello, World! message",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A Hello, World! message",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Hello, World!"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Authorization"
+      }
+    }
+  }
+}
