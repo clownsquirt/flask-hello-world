@@ -1,9 +1,7 @@
 {
   "version": 2,
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "main.py"
-    }
+    { "src": "/privacy-policy", "dest": "/privacy-policy.html" },
+	{ "src": "/(.*)", "dest": "main.py" }
   ]
 }
