@@ -4,6 +4,10 @@
     {
       "src": "/privacy-policy",
       "dest": "/privacy-policy.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.py"
     }
   ]
 }
